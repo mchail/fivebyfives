@@ -3,12 +3,15 @@ body {
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
-  line-height: 18px; }
+  line-height: 18px;
+}
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
-  line-height: 18px; }
+  line-height: 18px;
+  text-shadow: 0px 1px #fff;
+}
 
 pre {
   background-color: #eee;
@@ -16,12 +19,12 @@ pre {
   font-size: 11px; }
 
 a {
-  color: #000;
-  &:visited {
-    color: #666; }
+  color: #333;
+  &:visited { }
   &:hover {
-    color: #fff;
-    background-color: #000; } }
+    text-decoration: underline;
+  }
+}
 
 div {
   &.field, &.actions {
@@ -53,4 +56,48 @@ div {
     color: #fff; }
   ul li {
     font-size: 12px;
-    list-style: square; } }
+    list-style: square; }
+}
+
+.bottom-bar button {
+  width: 50%;
+  height: 40px;
+}
+
+.exercise-info {
+  padding-left: 80px;
+}
+
+.counter {
+  min-width: 50px;
+  text-align: right;
+  .num-container {
+    line-height: 40px;
+    margin: 0;
+  }
+  .num {
+    font-size: 30px;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border-radius: 100px;
+    background: #aaa;
+    text-align: center;
+    color: white;
+  }
+  .timer {
+    text-align: right;
+    font-family: "Courier";
+  }
+}
+
+.exercise.started .num {
+  background: #4C8BCF;
+}
+.exercise.finished .num {
+  background: green;
+}
+.exercise.active {
+  background: #bbb;
+  border: 1px solid green;
+}

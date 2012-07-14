@@ -1,2 +1,6 @@
 = content_tag_for(:div, @statuses) do |status|
-	%p= status.current
+	= render 'statuses/show', status: status
+
+.btn-group.bottom-bar
+	%button.btn.cancel Cancel
+	%button.btn.complete Complete workout

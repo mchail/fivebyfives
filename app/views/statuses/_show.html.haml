@@ -1,0 +1,11 @@
+.exercise.well.clearfix
+	.pull-left
+		%img{src: "http://placehold.it/64x64"}
+	.counter.pull-right
+		%p.num-container
+			%span.num 0
+		.timer 0:00
+	.exercise-info
+		%p= status.exercise.name
+		%p== #{status.current} lbs (+#{status.exercise.increment})
+

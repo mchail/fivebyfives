@@ -22,28 +22,22 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand(href="#") Fivebyfives
-          .container.nav-collapse
-            %ul.nav
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
+          = link_to "Five by Fives", root_path, class: :brand
+          - if user_signed_in?
+            .container.nav-collapse
+              %ul.nav
+                %li= link_to "Settings", edit_user_registration_path
+                %li= link_to "Change weights", change_weights_path
+                %li= link_to "History", history_path
+                %li= link_to "Logout", logout_path
 
     .container-fluid
-
       .row-fluid
-        .span3
-          .well.sidebar-nav
-            %ul.nav.nav-list
-              %li.nav-header Sidebar
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
-        .span9
+        .span12
           = yield
     
       %footer
-        %p &copy; Company 2012
+        %h6 &copy; guavascript 2012
     /
       Javascripts
       \==================================================

@@ -11,6 +11,9 @@ Fivebyfives::Application.routes.draw do
   resources :exercises
 
   root :to => "home#index"
+
+  match "/change_weights" => "home#change_weights", as: :change_weights
+  match "/history" => "home#history", as: :history
   
 
   # The priority is based upon order of creation:
