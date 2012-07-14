@@ -18,10 +18,11 @@
     .navbar.navbar-fixed-top
       .navbar-inner
         .container-fluid
-          %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
+          - if user_signed_in?
+            %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
           = link_to "Five by Fives", root_path, class: :brand
           - if user_signed_in?
             .container.nav-collapse
