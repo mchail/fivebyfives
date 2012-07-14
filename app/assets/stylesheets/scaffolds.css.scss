@@ -68,6 +68,10 @@ div {
   padding-left: 80px;
 }
 
+.weight {
+  font-weight: bold;
+}
+
 .counter {
   min-width: 50px;
   text-align: right;
@@ -99,5 +103,7 @@ div {
 }
 .exercise.active {
   background: #bbb;
-  border: 1px solid green;
+}
+.exercise.finished {
+  background: rgba(0, 255, 0, .2);
 }

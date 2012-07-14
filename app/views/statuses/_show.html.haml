@@ -4,8 +4,10 @@
 	.counter.pull-right
 		%p.num-container
 			%span.num 0
-		.timer 0:00
+		.timer{data: {time: 0}} 0:00
 	.exercise-info
 		%p= status.exercise.name
-		%p== #{status.current} lbs (+#{status.exercise.increment})
+		%p
+			%span.weight== #{status.current}
+			== lbs (+#{status.exercise.increment})
 
