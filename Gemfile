@@ -46,4 +46,4 @@ gem 'jquery-rails'
 
 # added by steve
 
-gem "heroku"
+#gem "heroku"
