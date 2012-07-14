@@ -1,5 +1,6 @@
 Fivebyfives::Application.routes.draw do
-  resources :records
+  
+  resources :routines
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

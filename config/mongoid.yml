@@ -1,0 +1,11 @@
+development:
+  uri: "mongodb://localhost/fivebyfives_development"
+
+test:
+  uri: "mongodb://localhost/fivebyfives_test"
+
+staging:
+  uri: <%= ENV['MONGOHQ_URL'] %>
+
+production:
+  uri: <%= ENV['MONGOHQ_URL'] %>

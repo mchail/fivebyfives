@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Type:
+  = @routine.type
+
+= link_to 'Edit', edit_routine_path(@routine)
+\|
+= link_to 'Back', routines_path
