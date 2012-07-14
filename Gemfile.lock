@@ -79,8 +79,6 @@ GEM
     less-rails (2.2.3)
       actionpack (>= 3.1)
       less (~> 2.2.0)
-    less-rails-bootstrap (2.0.13)
-      less-rails (~> 2.2.0)
     libv8 (3.3.10.4)
     libwebsocket (0.1.4)
       addressable
@@ -146,6 +144,11 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
+    twitter-bootstrap-rails (2.1.0)
+      actionpack (>= 3.1)
+      less-rails (~> 2.2.2)
+      railties (>= 3.1)
+      therubyracer (~> 0.10.1)
     tzinfo (0.3.33)
     uglifier (1.2.6)
       execjs (>= 0.3.0)
@@ -165,9 +168,9 @@ DEPENDENCIES
   devise
   haml-rails
   jquery-rails
-  less-rails-bootstrap
   mongoid (~> 2.4)
   rails (= 3.2.3)
   sass-rails (~> 3.2.3)
   therubyracer
+  twitter-bootstrap-rails
   uglifier (>= 1.0.3)

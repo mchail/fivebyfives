@@ -1,6 +1,17 @@
 Fivebyfives::Application.routes.draw do
+
+  devise_for :users do
+    get 'logout' => 'devise/sessions#destroy'
+  end
+
+  resources :records
+
+  resources :statuses
+
+  resources :exercises
+
+  root :to => "home#index"
   
-  resources :routines
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

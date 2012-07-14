@@ -18,7 +18,7 @@ class RecordsControllerTest < ActionController::TestCase
 
   test "should create record" do
     assert_difference('Record.count') do
-      post :create, record: @record.attributes
+      post :create, record: { pass: @record.pass, weight: @record.weight }
     end
 
     assert_redirected_to record_path(assigns(:record))
@@ -35,7 +35,7 @@ class RecordsControllerTest < ActionController::TestCase
   end
 
   test "should update record" do
-    put :update, id: @record, record: @record.attributes
+    put :update, id: @record, record: { pass: @record.pass, weight: @record.weight }
     assert_redirected_to record_path(assigns(:record))
   end
 

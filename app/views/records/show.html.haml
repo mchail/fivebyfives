@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Weight:
+  = @record.weight
+%p
+  %b Pass:
+  = @record.pass
+
+= link_to 'Edit', edit_record_path(@record)
+\|
+= link_to 'Back', records_path

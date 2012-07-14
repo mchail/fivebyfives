@@ -5,7 +5,7 @@ gem 'mongoid', '~> 2.4'
 gem 'bson_ext', '~> 1.5'
 gem 'devise'
 gem 'capybara'
-gem 'less-rails-bootstrap'
+gem 'twitter-bootstrap-rails'
 gem 'therubyracer'
 
 # Gems used only for assets and not required
@@ -17,6 +17,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+# gem 'jquery_mobile_rails'
 
 gem 'haml-rails'
 
