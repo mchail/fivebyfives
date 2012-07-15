@@ -4,7 +4,7 @@ class Status
 
   belongs_to :user
   belongs_to :exercise
-  embeds_many :records
+  # embeds_many :records
 
   field :current, :type => Integer
 end

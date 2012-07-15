@@ -12,9 +12,10 @@ Fivebyfives::Application.routes.draw do
 
   root :to => "home#index"
 
-  match "/change_weights" => "home#change_weights", as: :change_weights
+  match "/change_weights" => "statuses#change_weights", as: :change_weights, via: "POST"
   match "/history" => "home#history", as: :history
-  
+  match "/complete_workout" => "records#complete_workout", as: :complete_workout
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

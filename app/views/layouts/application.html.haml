@@ -28,8 +28,8 @@
             .container.nav-collapse
               %ul.nav
                 %li= link_to "Settings", edit_user_registration_path
-                %li= link_to "Change weights", change_weights_path
-                %li= link_to "History", history_path
+                %li= link_to "Change weights", statuses_path
+                %li= link_to "History", records_path
                 %li= link_to "Logout", logout_path
 
     .container-fluid
@@ -44,3 +44,5 @@
       \==================================================
     / Placed at the end of the document so the pages load faster
     = javascript_include_tag "application"
+    %script{src: "http://eightmedia.github.com/hammer.js/hammer.js"}
+    %script{src: "http://eightmedia.github.com/hammer.js/jquery.hammer.js"}

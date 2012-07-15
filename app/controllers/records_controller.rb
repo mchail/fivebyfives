@@ -2,7 +2,7 @@ class RecordsController < ApplicationController
   # GET /records
   # GET /records.json
   def index
-    @records = Record.all
+    @records = current_user.records
 
     respond_to do |format|
       format.html # index.html.erb
@@ -79,5 +79,25 @@ class RecordsController < ApplicationController
       format.html { redirect_to records_url }
       format.json { head :no_content }
     end
+  end
+
+  def complete_workout
+    user = current_user
+    record = user.records.create
+
+    params[:ex].keys.each do |s|
+      exercise = Exercise.find(s.split('_').last)
+      line = record.lines.create(
+        weight: params[:ex][s][:weight],
+        duration: params[:ex][s][:time]
+      )
+      exercise.lines << line
+      exercise.save!
+    end
+
+    user.rotation = user.rotation == 1 ? 2 : 1
+    user.save!
+
+    redirect_to records_path
   end
 end

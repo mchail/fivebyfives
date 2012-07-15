@@ -1,4 +1,4 @@
-.exercise.well.clearfix
+= div_for status.exercise, class: "exercise well clearfix" do
 	.pull-left
 		%img{src: "http://placehold.it/64x64"}
 	.counter.pull-right
@@ -6,7 +6,7 @@
 			%span.num 0
 		.timer{data: {time: 0}} 0:00
 	.exercise-info
-		%p= status.exercise.name
+		%p.ex-name= status.exercise.name
 		%p
 			%span.weight== #{status.current}
 			== lbs (+#{status.exercise.increment})

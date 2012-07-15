@@ -7,6 +7,7 @@ class User
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :statuses
+  has_many :records
 
   ## Database authenticatable
   field :email,              :type => String, :default => ""

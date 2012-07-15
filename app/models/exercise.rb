@@ -3,6 +3,7 @@ class Exercise
   include Mongoid::Timestamps
 
   has_many :statuses
+  has_many :lines
 
   field :name, :type => String
   field :starting_weight, type: Integer

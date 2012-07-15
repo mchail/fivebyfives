@@ -1,19 +1,35 @@
-%h1 Listing statuses
-
-%table
-  %tr
-    %th Current
-    %th
-    %th
-    %th
-
-  - @statuses.each do |status|
-    %tr
-      %td= status.current
-      %td= link_to 'Show', status
-      %td= link_to 'Edit', edit_status_path(status)
-      %td= link_to 'Destroy', status, :confirm => 'Are you sure?', :method => :delete
-
+%h2 Getting stroooonger
 %br
 
-= link_to 'New Status', new_status_path
+= form_tag change_weights_path do
+  - @statuses.each do |status|
+    .status
+      = link_to ">>", "#", class: "btn btn-large increase pull-right"
+      = link_to "<<", "#", class: "btn btn-large decrease pull-left"
+      %table.status-field
+        %tr
+          %td.name
+            = status.exercise.name + ":"
+          %td
+            = hidden_field_tag "statuses[#{status.id}]", status.current
+            %span.current= status.current
+  %br
+  = submit_tag "Done", :class => "btn btn-large btn-success pull-right"
+
+= link_to "Cancel", :back
+
+:css
+  .status {
+    height: 40px;
+    line-height: 40px;
+  }
+  .status-field {
+    margin-left: 70px;
+  }
+  .current {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  .name {
+    width: 170px;
+  }

@@ -3,6 +3,40 @@ $ ->
 		FIVE.clickHandler($(this))
 	$('.cancel').click ->
 		window.location.reload()
+	# $('.exercise').swipe(
+	# 	swipeLeft: ->
+	# 		$(this).addClass('failure')
+	# 	swipeRight: ->
+	# 		$(this).addClass('finished').removeClass('failure')
+	# )
+
+	$('.complete').click ->
+		form = $('#complete_workout_form')
+		$('.exercise').each (i, v) ->
+			ex = $(v)
+			exid = ex.attr('id')
+			weight = ex.find('.weight').text()
+			time = ex.find('.timer').text()
+			name = ex.find('.ex-name').text()
+			reps = ex.find('.num').text()
+			form.append($('<input>').attr('name', 'ex[' + exid + "][weight]").attr('value', weight))
+			form.append($('<input>').attr('name', 'ex[' + exid + "][time]").attr('value', time))
+			form.append($('<input>').attr('name', 'ex[' + exid + "][name]").attr('value', name))
+			form.append($('<input>').attr('name', 'ex[' + exid + "][reps]").attr('value', reps))
+		form.submit()
+
+	$('.increase').click (e) ->
+		e.preventDefault()
+		input = $(this).parent().find('input')
+		text = $(this).parent().find('.current')
+		input.val(parseInt(input.val()) + 5)
+		text.text(parseInt(text.text()) + 5)
+	$('.decrease').click (e) ->
+		e.preventDefault()
+		input = $(this).parent().find('input')
+		text = $(this).parent().find('.current')
+		input.val(parseInt(input.val()) - 5)
+		text.text(parseInt(text.text()) - 5)
 
 FIVE =
 	active: undefined

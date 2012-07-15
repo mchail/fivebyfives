@@ -2,7 +2,7 @@ class StatusesController < ApplicationController
   # GET /statuses
   # GET /statuses.json
   def index
-    @statuses = Status.all
+    @statuses = current_user.statuses
 
     respond_to do |format|
       format.html # index.html.erb
@@ -79,5 +79,15 @@ class StatusesController < ApplicationController
       format.html { redirect_to statuses_url }
       format.json { head :no_content }
     end
+  end
+
+  def change_weights
+    params[:statuses].keys.each do |status_id|
+      status = current_user.statuses.find(status_id)
+      new_weight = params[:statuses][status_id].to_i
+      status.update_attribute(:current, new_weight)
+    end
+
+    redirect_to root_path
   end
 end
