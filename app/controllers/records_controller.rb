@@ -93,6 +93,10 @@ class RecordsController < ApplicationController
       )
       exercise.lines << line
       exercise.save!
+
+      status = Status.where(user_id: user.id, exercise_id: exercise.id).first
+      status.current += exercise.increment
+      status.save!
     end
 
     user.rotation = user.rotation == 1 ? 2 : 1
