@@ -19,6 +19,8 @@
       a[f]=[]:f="mixpanel";g.people=g.people||[];h="disable track track_pageview track_links track_forms register register_once unregister identify name_tag set_config people.set people.increment".split(" ");for(e=0;e<h.length;e++)d(g,h[e]);a._i.push([b,c,f])};a.__SV=1.1;window.mixpanel=a})(document,window.mixpanel||[]);
       mixpanel.init("fabf69814e524171bd9b18be45d8f18f");
 
+      mixpanel.name_tag(#{current_user.nil? ? "guest" : current_user.email});
+
   %body
     .navbar.navbar-fixed-top
       .navbar-inner
@@ -46,7 +48,7 @@
         %h6 &copy; guavascript 2012
         %a{href: "https://mixpanel.com/f/partner"}
           %img{src: "https://mixpanel.com/site_media/images/partner/badge_light.png", alt: "Mobile Analytics"}
-          
+
     /
       Javascripts
       \==================================================
