@@ -1,7 +1,7 @@
 %h1 Workout history
 
 = div_for @records, class: "well" do |record|
-  %h2= record.created_at.strftime('%-m/%-d/%Y')
+  %h2= record.created_at.in_time_zone.strftime('%-m/%-d/%Y')
   = div_for record.lines do |line|
     = line.exercise.name
     = line.weight
