@@ -11,6 +11,7 @@ $ ->
 	# )
 
 	$('.complete').click ->
+		mixpanel.track('completed workout')
 		form = $('#complete_workout_form')
 		$('.exercise').each (i, v) ->
 			ex = $(v)
