@@ -22,6 +22,7 @@
     - unless current_user.nil?
       :javascript
         mixpanel.name_tag("#{current_user.email}");
+        mixpanel.identify("#{current_user.email}");
 
   %body
     .navbar.navbar-fixed-top
