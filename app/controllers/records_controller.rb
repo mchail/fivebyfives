@@ -2,7 +2,7 @@ class RecordsController < ApplicationController
   # GET /records
   # GET /records.json
   def index
-    @records = current_user.records
+    @records = current_user.records.reverse
 
     respond_to do |format|
       format.html # index.html.erb
